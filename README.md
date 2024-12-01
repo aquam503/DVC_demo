@@ -115,3 +115,5 @@ This will bring your local environment back to the latest version of the pipelin
 
 - Add remote storage for collaborative workflows.
 - Experiment with more complex pipelines.
+
+## Read : https://medium.com/@elmahfoudradwane/dvc-for-everyone-a-friendly-guide-to-data-and-model-versioning-a37a30b70999
