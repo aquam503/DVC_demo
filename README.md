@@ -15,7 +15,15 @@ dvc-demo/
 ├── dvc.lock             # Snapshot of pipeline state
 └── README.md            # Documentation
 ```
-
+for example data.csv
+```
+name,age
+Radouane,23
+Ahmed,26
+Alice,30
+Bob,25
+Charlie,35
+```
 ## How to Run the Project
 
 1. **Clone the Repository**:
