@@ -1,5 +1,7 @@
 # DVC Demo
 
+![DVC Logo](https://dvc.org/img/dvc_icon-color--square_vector.svg)
+
 This is a demo project showcasing how to use [DVC](https://dvc.org/) for data version control and pipelines, entirely locally without remote storage.
 
 ## Project Structure
