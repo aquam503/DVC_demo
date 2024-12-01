@@ -30,13 +30,30 @@ dvc-demo/
    pip install dvc pandas
    ```
 
-3. **Reproduce the Pipeline**:
+4. **Define the DVC Pipeline**:
+   Run the following commands to define the pipeline:
+   ```bash
+   # Stage 1: Preprocessing
+   dvc run -n preprocess \
+        -d data.csv -d preprocess.py \
+        -o processed_data.csv \
+        python preprocess.py
+   
+   # Stage 2: Training
+   dvc run -n train \
+        -d processed_data.csv -d train.py \
+        -o model.txt \
+        python train.py
+   ```
+
+4. **Reproduce the Pipeline**:
+
    Run the entire pipeline:
    ```bash
    dvc repro
    ```
 
-4. **View Results**:
+5. **View Results**:
    - Preprocessed data: `processed_data.csv`
    - Trained model summary: `model.txt`
 
