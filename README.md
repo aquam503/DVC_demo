@@ -57,6 +57,39 @@ dvc-demo/
    - Preprocessed data: `processed_data.csv`
    - Trained model summary: `model.txt`
 
+
+## Switching Between Versions
+You can easily switch between different versions of your pipeline using git and dvc:
+   ```bash
+   git checkout <commit_hash>
+   ```
+   Run dvc checkout to sync the data files to the version of the pipeline at that commit:
+   
+   ```bash
+   dvc checkout
+   ```
+
+If you have modified data.csv and need to revert to the version in the commit, DVC will prompt with an error that you are trying to overwrite unsaved files. In such cases, use the --force flag to confirm that you want to discard your local changes:
+
+   ```bash
+   dvc checkout --force
+   ```
+Important: When you return to a previous version of data.csv, DVC will also ensure that all downstream outputs (like processed_data.csv and model.txt) match the state of the pipeline at that commit. This means:
+
+The version of data.csv you checkout will correspond to a specific state of processed_data.csv and model.txt.
+So, by checking out a previous version of data.csv, you are also reverting the processed data and model to the versions generated from that specific dataset.
+
+Return to the main branch (or any other branch you're working on):
+
+   ```bash
+   git checkout main
+   ```
+Update your local data and models to the latest version:
+   ```bash
+   dvc checkout
+   ```
+This will bring your local environment back to the latest version of the pipeline and its outputs.
+
 ## How It Works
 
 - `data.csv` is tracked by DVC to manage dataset versions.
