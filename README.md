@@ -34,13 +34,13 @@ dvc-demo/
    Run the following commands to define the pipeline:
    ```bash
    # Stage 1: Preprocessing
-   dvc run -n preprocess \
+   dvc stage add -n preprocess \
         -d data.csv -d preprocess.py \
         -o processed_data.csv \
         python preprocess.py
    
    # Stage 2: Training
-   dvc run -n train \
+   dvc stage add -n train \
         -d processed_data.csv -d train.py \
         -o model.txt \
         python train.py
